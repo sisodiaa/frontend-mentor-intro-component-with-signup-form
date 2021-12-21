@@ -103,7 +103,8 @@ body {
 
   &__form {
     div {
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
+      position: relative;
     }
 
     input {
@@ -124,6 +125,12 @@ body {
           outline: none;
           border: 1px solid var(--color-dark-blue);
         }
+
+        &.invalid {
+          outline: none;
+          border: 1px solid var(--color-red);
+          color: var(--color-red);
+        }
       }
     }
 
@@ -143,6 +150,22 @@ body {
     }
   }
 
+  &__error-icon {
+    display: none;
+    position: absolute;
+    right: 5%;
+    top: 0;
+    transform: translateY(70%);
+  }
+
+  &__error-message {
+    display: none;
+    margin-top: 0.25rem;
+    font-size: .75rem;
+    text-align: right;
+    color: var(--color-red);
+  }
+
   &__notice {
     display: block;
     margin-top: 1rem;
@@ -155,6 +178,14 @@ body {
       color: var(--color-red);
       font-weight: 600;
     }
+  }
+
+  &__form input.invalid + &__error-message {
+    display: block;
+  }
+
+  &__form input.invalid ~ &__error-icon {
+    display: block;
   }
 }
 
