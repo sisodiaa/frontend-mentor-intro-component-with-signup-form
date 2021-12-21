@@ -21,6 +21,7 @@ $breakpoint-mobile: 56em;
   --color-red: hsl(0, 100%, 74%);
   --color-green: hsl(154, 59%, 51%);
   --color-darker-green: hsl(154, 59%, 45%);
+  --color-lighter-green: hsl(154, 59%, 61%);
   --color-blue: hsl(248, 32%, 49%);
   --color-dark-blue: hsl(249, 10%, 26%);
   --color-grayish-blue: hsl(246, 25%, 77%);
@@ -147,6 +148,12 @@ body {
       font-size: 0.9rem;
       border: none;
       border-bottom: 5px solid var(--color-darker-green);
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: var(--color-lighter-green);
+      }
     }
   }
 
