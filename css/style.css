@@ -106,6 +106,10 @@ body {
 .intro__form input[type=text], .intro__form input[type=email], .intro__form input[type=password] {
   border: 1px solid var(--color-grayish-blue);
 }
+.intro__form input[type=text]:focus, .intro__form input[type=email]:focus, .intro__form input[type=password]:focus {
+  outline: none;
+  border: 1px solid var(--color-dark-blue);
+}
 .intro__form button {
   width: 100%;
   padding: 1.25rem;
@@ -133,6 +137,50 @@ body {
   font-weight: 600;
 }
 
+@media only screen and (min-width: 56em) {
+  body {
+    min-height: 100vh;
+    background-image: url(../images/bg-intro-desktop.png), linear-gradient(to bottom, var(--color-red), var(--color-red));
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 77%;
+  }
+
+  .intro {
+    display: flex;
+    column-gap: 5rem;
+  }
+  .intro__body, .intro__cta {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .intro__body {
+    align-items: center;
+    text-align: left;
+  }
+  .intro__heading {
+    align-self: flex-start;
+    font-size: 3rem;
+    line-height: 1.1;
+  }
+  .intro__cta {
+    align-items: stretch;
+  }
+  .intro__subheading {
+    font-size: 1.05rem;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+  }
+  .intro__form button {
+    font-size: 1rem;
+  }
+}
 .attribution {
   display: none;
 }
