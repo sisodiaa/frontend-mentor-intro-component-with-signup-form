@@ -1,0 +1,156 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+@mixin pseudo-shadow {
+  &::after {
+    position: absolute;
+    content: "";
+    top: 0.5rem;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-dark-blue);
+    opacity: 0.3;
+    border-radius: .5rem;
+    z-index: -5;
+  }
+}
+
+:root {
+  --color-red: hsl(0, 100%, 74%);
+  --color-green: hsl(154, 59%, 51%);
+  --color-darker-green: hsl(154, 59%, 45%);
+  --color-blue: hsl(248, 32%, 49%);
+  --color-dark-blue: hsl(249, 10%, 26%);
+  --color-grayish-blue: hsl(246, 25%, 77%);
+  --color-white: hsl(0, 0%, 100%);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: var(--color-white);
+
+  background-image: url(../images/bg-intro-mobile.png),
+    linear-gradient(to bottom, var(--color-red), var(--color-red));
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-blend-mode: normal;
+}
+
+.container {
+  width: 87%;
+  margin: 0 auto;
+}
+
+.intro {
+  margin-top: 6rem;
+  margin-bottom: 5rem;
+  text-align: center;
+
+  &__heading {
+    span {
+      display: block;
+    }
+  }
+
+  &__text {
+    margin-top: 1.5rem;
+  }
+
+
+  &__cta {
+    margin-top: 3rem;
+  }
+
+  &__subheading {
+    position: relative;
+    font-size: 1rem;
+    padding: 1rem 3rem;
+    background-color: var(--color-blue);
+    border-radius: .5rem;
+
+    span {
+      font-weight: 400;
+    }
+
+    @include pseudo-shadow;
+  }
+
+  &__closing {
+    position: relative;
+    margin-top: 2rem;
+    padding: 1.25rem;
+    background-color: var(--color-white);
+    border-radius: .5rem;
+
+    @include pseudo-shadow;
+  }
+
+  &__form {
+    div {
+      margin-bottom: 1rem;
+    }
+
+    input {
+      width: 100%;
+      padding: 1.25rem;
+      border-radius: .25rem;
+
+      &::-webkit-input-placeholder {
+        font-weight: 600;
+      }
+
+      &[type="text"],
+      &[type="email"],
+      &[type="password"] {
+        border: 1px solid var(--color-grayish-blue);
+      }
+    }
+
+    button {
+      width: 100%;
+      padding: 1.25rem;
+      border-radius: .25rem;
+      position: relative;
+      text-transform: uppercase;
+      color: var(--color-white);
+      background-color: var(--color-green);
+      font-weight: 700;
+      letter-spacing: .1rem;
+      font-size: 0.9rem;
+      border: none;
+      border-bottom: 5px solid var(--color-darker-green);
+    }
+  }
+
+  &__notice {
+    display: block;
+    margin-top: 1rem;
+    color: var(--color-grayish-blue);
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: .75rem;
+
+    span {
+      color: var(--color-red);
+      font-weight: 600;
+    }
+  }
+}
+
+.attribution {
+  display: none;
+}
